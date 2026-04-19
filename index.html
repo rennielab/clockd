@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clockd, Time tracking built for attorneys</title>
+<meta name="description" content="Clockd is a time tracking app built by an attorney, for attorneys. Track billable hours, manage matters, and run your practice from your pocket. Launching late 2026." />
+<link rel="icon" href="assets/clockd-logo-green.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=4" />
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header class="nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Clockd home">
+      <img src="assets/clockd-logo-green.png" alt="Clockd" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#why">Why Clockd</a>
+      <a href="#product">The app</a>
+      <a href="#story">Our story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#notify" class="btn btn-ghost">Sign in</a>
+      <a href="#notify" class="btn btn-primary">Get early access</a>
+    </div>
+    <button class="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#why">Why Clockd</a>
+    <a href="#product">The app</a>
+    <a href="#story">Our story</a>
+    <a href="#contact">Contact</a>
+    <a href="#notify" class="btn btn-primary">Get early access</a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="pill">
+        <span class="pill-dot"></span>
+        Launching late 2026 · iOS &amp; Android
+      </div>
+      <h1>
+        The 6&nbsp;minutes between <em>calls</em>,
+        <br class="desk-only" />
+        the 4&nbsp;minutes after <em>court</em>,
+        <br class="desk-only" />
+        the hour you forgot to bill on <em>Tuesday.</em>
+      </h1>
+      <p class="hero-sub">
+        Clockd is a time tracking app built by an attorney, for attorneys.
+        Capture every billable minute the moment it happens, from a phone call,
+        a hallway chat, a long night of drafting, without breaking your flow.
+      </p>
+
+      <form class="notify" id="notify" onsubmit="return handleNotify(event)">
+        <label class="sr-only" for="notify-email">Email address</label>
+        <input type="email" id="notify-email" name="email" required placeholder="you@yourfirm.com" autocomplete="email" />
+        <button type="submit" class="btn btn-primary">Notify me at launch →</button>
+        <div class="notify-note" id="notify-note">No spam. Just one email when we go live.</div>
+      </form>
+
+      <div class="store-badges">
+        <a href="#notify" class="store-badge" aria-label="Coming soon to the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <div class="store-badge-text">
+            <span class="tiny">Coming soon on</span>
+            <span class="big">App Store</span>
+          </div>
+        </a>
+        <a href="#notify" class="store-badge" aria-label="Coming soon to Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.61 1.81a2 2 0 0 0-.61 1.45v17.48a2 2 0 0 0 .61 1.45l10.34-10.19L3.61 1.81zm11.4 9.24l2.83-2.79 3.6 2.06c1.24.71 1.24 2.5 0 3.21l-3.6 2.06-2.83-2.79 2.56-2.52-2.56-1.23zm-1.42 1.4L4.5 21.48l9.09-5.2-1-2.72 1-1.11zm0-2.9 1-1.11 1-2.72-9.09-5.2 8.09 9.03z"/></svg>
+          <div class="store-badge-text">
+            <span class="tiny">Coming soon on</span>
+            <span class="big">Google Play</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-phones" aria-hidden="true">
+      <!-- Back phone: Activity list -->
+      <div class="phone phone-back">
+        <div class="phone-screen">
+          <div class="sbar">
+            <span class="sbar-time">9:41</span>
+            <span class="sbar-right">
+              <svg viewBox="0 0 18 12"><rect x="0" y="3" width="3" height="6" rx=".5"/><rect x="4.5" y="2" width="3" height="7" rx=".5"/><rect x="9" y="1" width="3" height="8" rx=".5"/><rect x="13.5" y="0" width="3" height="9" rx=".5"/></svg>
+              <svg viewBox="0 0 16 12"><path d="M8 3a8 8 0 0 1 5.66 2.34l-1.41 1.42a6 6 0 0 0-8.48 0L2.34 5.34A8 8 0 0 1 8 3zm0 4a4 4 0 0 1 2.83 1.17l-1.41 1.42a2 2 0 0 0-2.84 0l-1.41-1.42A4 4 0 0 1 8 7z"/></svg>
+              <svg viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx=".5"/><rect x="2" y="2" width="15" height="6" rx="1"/></svg>
+            </span>
+          </div>
+          <div class="p-head">
+            <div class="p-head-top">
+              <span class="p-hello">What are you working on today?</span>
+              <span class="p-search">⌕</span>
+            </div>
+            <div class="p-tabs">
+              <span>Today</span>
+              <span class="on">This Week</span>
+              <span>Last Week</span>
+              <span>Last Month</span>
+            </div>
+            <div class="p-date-row">
+              <span>Today, Oct 23</span>
+              <span class="p-total">Total 7.2 hrs</span>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 4a2.5 2.5 0 0 1 2.5 2.5A2.5 2.5 0 0 1 12 12a2.5 2.5 0 0 1-2.5-2.5A2.5 2.5 0 0 1 12 7zm0 12c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08C16.71 17.72 14.5 19 12 19z"/></svg></div>
+            <div class="entry-body">
+              <div class="entry-title">Acme Corporation</div>
+              <div class="entry-sub">Reyes v. Horizon Corp.</div>
+              <div class="entry-tags">
+                <span class="tag">Billable</span>
+                <span class="tag tag-amber">Pending</span>
+              </div>
+            </div>
+            <div class="entry-right">
+              <div class="entry-hrs">1.4 <small>HRS</small></div>
+              <div class="entry-time">08:44</div>
+            </div>
+          </div>
+
+          <div class="entry entry-swipe">
+            <div class="swipe-confirm">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M4 12l5 5L20 6"/></svg>
+              Confirm
+            </div>
+            <div class="entry-body">
+              <div class="entry-title">Acme Corporation</div>
+              <div class="entry-sub">Reyes v. Horizon Corp.</div>
+              <div class="entry-tags">
+                <span class="tag">Billable</span>
+                <span class="tag tag-amber">Pending</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="date-divider">Yesterday, Oct 22</div>
+
+          <div class="entry">
+            <div class="entry-icon entry-icon-phone"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg></div>
+            <div class="entry-body">
+              <div class="entry-title">+44 7700 900123</div>
+              <div class="entry-sub">Reyes v. Horizon Corp.</div>
+              <div class="entry-tags">
+                <span class="tag">Billable</span>
+                <span class="tag tag-gray">Unassigned</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-icon entry-icon-matter"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z"/></svg></div>
+            <div class="entry-body">
+              <div class="entry-title">Stark Industries</div>
+              <div class="entry-sub">Patent Litigation · Disposition Prep</div>
+              <div class="entry-tags">
+                <span class="tag">Billable</span>
+                <span class="tag tag-green">Confirmed</span>
+              </div>
+            </div>
+            <div class="entry-right">
+              <div class="entry-hrs">3.8 <small>HRS</small></div>
+            </div>
+          </div>
+
+          <!-- bottom nav -->
+          <div class="p-nav">
+            <div class="p-nav-item on">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              <span>Activities</span>
+            </div>
+            <div class="p-nav-item">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16v2H4zm0 6h16v2H4zm0 6h16v2H4z"/></svg>
+              <span>Directory</span>
+            </div>
+            <div class="p-nav-item p-nav-fab" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg>
+            </div>
+            <div class="p-nav-item">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path fill="currentColor" d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+              <span>Profile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Front phone: live timer -->
+      <div class="phone phone-front">
+        <div class="phone-screen phone-screen-timer">
+          <div class="sbar sbar-light">
+            <span class="sbar-time">9:41</span>
+            <span class="sbar-right">
+              <svg viewBox="0 0 18 12"><rect x="0" y="3" width="3" height="6" rx=".5"/><rect x="4.5" y="2" width="3" height="7" rx=".5"/><rect x="9" y="1" width="3" height="8" rx=".5"/><rect x="13.5" y="0" width="3" height="9" rx=".5"/></svg>
+              <svg viewBox="0 0 16 12"><path d="M8 3a8 8 0 0 1 5.66 2.34l-1.41 1.42a6 6 0 0 0-8.48 0L2.34 5.34A8 8 0 0 1 8 3zm0 4a4 4 0 0 1 2.83 1.17l-1.41 1.42a2 2 0 0 0-2.84 0l-1.41-1.42A4 4 0 0 1 8 7z"/></svg>
+              <svg viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx=".5"/><rect x="2" y="2" width="15" height="6" rx="1"/></svg>
+            </span>
+          </div>
+          <div class="timer-wrap">
+            <div class="avatar-lg">SM</div>
+            <div class="timer-name">Sarah Mitchell</div>
+            <div class="timer-matter">Reyes v. Horizon Corp.</div>
+            <div class="timer-count" id="live-timer">00:08:04</div>
+            <label class="timer-toggle">
+              <span class="switch"><span></span></span>
+              Do not bill
+            </label>
+          </div>
+          <div class="call-controls">
+            <button class="call-btn call-mute" aria-label="Mute">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+            </button>
+            <button class="call-btn call-end" aria-label="End">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 9c-1.6 0-3.15.25-4.6.72V13a1 1 0 0 1-.75.97L3.6 14.8A1 1 0 0 1 2.4 14l-1.1-1.84a1 1 0 0 1 .05-1.12A14.96 14.96 0 0 1 12 7c4.14 0 7.94 1.68 10.65 4.04.34.3.39.81.05 1.12L21.6 14a1 1 0 0 1-1.2.8l-3.05-.83a1 1 0 0 1-.75-.97V9.72A15.2 15.2 0 0 0 12 9z"/></svg>
+            </button>
+            <button class="call-btn call-speaker" aria-label="Speaker">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY CLOCKD ========== -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="eyebrow">Why Clockd</div>
+    <h2 class="h2">
+      Your time is your life's work. <br />
+      <span class="h2-em">Stop losing it to sticky notes.</span>
+    </h2>
+    <p class="section-sub">
+      Most attorneys lose 30 minutes of billable time every day, not because they
+      didn't do the work, but because they forgot to write it down. Clockd remembers
+      for you.
+    </p>
+
+    <div class="why-grid">
+      <article class="why-card why-card-hero">
+        <div class="why-card-art">
+          <div class="mini-timer">
+            <div class="mini-timer-time">00:12:47</div>
+            <div class="mini-timer-matter">Dobson · Contract Review</div>
+            <div class="mini-timer-bar"><div></div></div>
+          </div>
+        </div>
+        <h3>Live time tracking, built for attorneys</h3>
+        <p>
+          One tap starts the clock. A tap and a swipe confirms the entry.
+          No dropdowns, no drawers, no ten-screen dance. It's built the way
+          you actually work a day.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg></div>
+        <h3>Calls that bill themselves</h3>
+        <p>
+          When the phone rings, Clockd is already listening. End the call
+          and the entry is waiting for you, matter, duration, number, done.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <h3>Clients, matters, directory, one pocket</h3>
+        <p>
+          Every file you touch, every number you call, every note you scribble
+          lives in one place. Searchable. Shareable. Yours.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 13h4v8H3zm7-6h4v14h-4zm7 3h4v11h-4z"/></svg></div>
+        <h3>Know how the week actually went</h3>
+        <p>
+          A weekly picture of your hours, your team's utilization, and the
+          matters quietly eating your life. No surprises at the end of the month.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1l9 4v6c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V5l9-4z"/></svg></div>
+        <h3>Private. Encrypted. Yours alone.</h3>
+        <p>
+          Attorney-client data deserves more than a checkbox. Clockd encrypts
+          entries end-to-end and never sells or shares your data. Ever.
+        </p>
+      </article>
+
+      <article class="why-card">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1 0-2 .9-2 2v12c0 1.1 1 2 2 2h7v2H8v2h8v-2h-2v-2h7c1 0 2-.9 2-2V5c0-1.1-1-2-2-2zm0 14H3V5h18v12z"/></svg></div>
+        <h3>Three tools. One login.</h3>
+        <p>
+          Mobile for the day, the web dashboard for the week, a client portal
+          for the invoice. All talking to each other. None of them getting in your way.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRODUCT SHOWCASE ========== -->
+<section class="product" id="product">
+  <div class="section-inner">
+    <div class="eyebrow eyebrow-light">A day with Clockd</div>
+    <h2 class="h2 h2-light">
+      It's 4:47 PM. You've been running since breakfast. <br />
+      <span class="h2-em">Clockd has been keeping score.</span>
+    </h2>
+
+    <!-- Feature row 1: live timer -->
+    <div class="showcase">
+      <div class="showcase-copy">
+        <div class="step">Step 1 · In the moment</div>
+        <h3 class="h3-light">Tap. The clock starts. You get back to the call.</h3>
+        <p class="p-light">
+          A live timer, a clean do-not-bill toggle, and three huge buttons
+         , mute, end, speaker, because you're probably already driving,
+          walking, or holding a coffee.
+        </p>
+        <ul class="feature-list">
+          <li>One-tap start from anywhere</li>
+          <li>Works with the native phone dialer</li>
+          <li>Flag "do not bill" without stopping the clock</li>
+        </ul>
+      </div>
+      <div class="showcase-art">
+        <div class="phone phone-standalone">
+          <div class="phone-screen phone-screen-timer">
+            <div class="sbar sbar-light">
+              <span class="sbar-time">9:41</span>
+              <span class="sbar-right">
+                <svg viewBox="0 0 18 12"><rect x="0" y="3" width="3" height="6" rx=".5"/><rect x="4.5" y="2" width="3" height="7" rx=".5"/><rect x="9" y="1" width="3" height="8" rx=".5"/><rect x="13.5" y="0" width="3" height="9" rx=".5"/></svg>
+                <svg viewBox="0 0 16 12"><path d="M8 3a8 8 0 0 1 5.66 2.34l-1.41 1.42a6 6 0 0 0-8.48 0L2.34 5.34A8 8 0 0 1 8 3zm0 4a4 4 0 0 1 2.83 1.17l-1.41 1.42a2 2 0 0 0-2.84 0l-1.41-1.42A4 4 0 0 1 8 7z"/></svg>
+                <svg viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx=".5"/><rect x="2" y="2" width="15" height="6" rx="1"/></svg>
+              </span>
+            </div>
+            <div class="timer-wrap">
+              <div class="avatar-lg">DM</div>
+              <div class="timer-name">David Morales</div>
+              <div class="timer-matter">Dobson · Contract Review</div>
+              <div class="timer-count">00:14:22</div>
+              <label class="timer-toggle"><span class="switch"><span></span></span> Do not bill</label>
+            </div>
+            <div class="call-controls">
+              <button class="call-btn call-mute"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg></button>
+              <button class="call-btn call-end"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 9c-1.6 0-3.15.25-4.6.72V13a1 1 0 0 1-.75.97L3.6 14.8A1 1 0 0 1 2.4 14l-1.1-1.84a1 1 0 0 1 .05-1.12A14.96 14.96 0 0 1 12 7c4.14 0 7.94 1.68 10.65 4.04.34.3.39.81.05 1.12L21.6 14a1 1 0 0 1-1.2.8l-3.05-.83a1 1 0 0 1-.75-.97V9.72A15.2 15.2 0 0 0 12 9z"/></svg></button>
+              <button class="call-btn call-speaker"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature row 2: web dashboard -->
+    <div class="showcase showcase-reverse">
+      <div class="showcase-copy">
+        <div class="step">Step 2 · At the end of the week</div>
+        <h3 class="h3-light">Open the laptop. See everything you did.</h3>
+        <p class="p-light">
+          Hours by matter, utilization by person, meetings vs. captured time.
+          Everything a partner needs to bill and every number an associate
+          wants to see.
+        </p>
+        <ul class="feature-list">
+          <li>Weekly, monthly and custom ranges</li>
+          <li>Team utilization at a glance</li>
+          <li>Export to your existing billing system</li>
+        </ul>
+      </div>
+      <div class="showcase-art">
+        <div class="browser">
+          <div class="browser-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <div class="browser-url">app.getclockd.com/dashboard</div>
+          </div>
+          <div class="browser-body">
+            <div class="dash-side">
+              <img src="assets/clockd-logo-green.png" alt="" class="dash-side-logo"/>
+              <div class="dash-nav">
+                <div class="dash-nav-item on">Dashboard</div>
+                <div class="dash-nav-item">Time Entries</div>
+                <div class="dash-nav-item">Matters</div>
+                <div class="dash-nav-item">Clients</div>
+                <div class="dash-nav-item">Team</div>
+                <div class="dash-nav-item">Settings</div>
+              </div>
+            </div>
+            <div class="dash-main">
+              <div class="dash-top">
+                <div>
+                  <div class="dash-h">Dashboard</div>
+                  <div class="dash-sub">Welcome back, Dana</div>
+                </div>
+                <div class="dash-new">+ New Entry</div>
+              </div>
+              <div class="dash-stats">
+                <div class="dash-stat"><div class="dash-stat-v">16.47 <small>hr</small></div><div class="dash-stat-k">This week</div><div class="dash-stat-d up">+24.3%</div></div>
+                <div class="dash-stat"><div class="dash-stat-v">$3,204</div><div class="dash-stat-k">Billable</div><div class="dash-stat-d up">+18.1%</div></div>
+                <div class="dash-stat"><div class="dash-stat-v">6</div><div class="dash-stat-k">Matters</div></div>
+                <div class="dash-stat"><div class="dash-stat-v">0.82</div><div class="dash-stat-k">Utilization</div></div>
+              </div>
+              <div class="dash-chart">
+                <div class="chart-title">Hours Over Time</div>
+                <div class="chart-bars">
+                  <div style="--h:40%"></div><div style="--h:62%"></div>
+                  <div style="--h:78%"></div><div style="--h:55%"></div>
+                  <div style="--h:88%"></div><div style="--h:70%"></div>
+                  <div style="--h:45%"></div>
+                </div>
+                <div class="chart-x"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature row 3: client portal -->
+    <div class="showcase">
+      <div class="showcase-copy">
+        <div class="step">Step 3 · At the end of the month</div>
+        <h3 class="h3-light">Clients log in. Invoices explain themselves.</h3>
+        <p class="p-light">
+          A simple, branded portal so your clients can see what they're
+          paying for, approve entries, download invoices, keep the
+          relationship honest.
+        </p>
+        <ul class="feature-list">
+          <li>Invite-only, encrypted access per client</li>
+          <li>Clients approve entries with a click</li>
+          <li>Your logo, your colors, your portal</li>
+        </ul>
+      </div>
+      <div class="showcase-art">
+        <div class="browser browser-small">
+          <div class="browser-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <div class="browser-url">portal.getclockd.com/acme</div>
+          </div>
+          <div class="browser-body browser-body-portal">
+            <div class="portal-head">
+              <div>
+                <div class="portal-client">Acme Corporation</div>
+                <div class="portal-matter">Reyes v. Horizon Corp.</div>
+              </div>
+              <div class="portal-tot">$14,820<small>.00</small></div>
+            </div>
+            <div class="portal-row"><span class="dot-g"></span><div><div>Discovery review</div><small>Oct 18 · 2.4 hrs</small></div><span class="portal-amt">$960</span></div>
+            <div class="portal-row"><span class="dot-g"></span><div><div>Deposition prep</div><small>Oct 19 · 3.8 hrs</small></div><span class="portal-amt">$1,520</span></div>
+            <div class="portal-row"><span class="dot-y"></span><div><div>Client strategy call</div><small>Oct 20 · 1.1 hrs</small></div><span class="portal-amt">$440</span></div>
+            <div class="portal-row"><span class="dot-g"></span><div><div>Filing preparation</div><small>Oct 22 · 4.6 hrs</small></div><span class="portal-amt">$1,840</span></div>
+            <button class="portal-btn">Approve &amp; Pay →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOUNDER STORY ========== -->
+<section class="story" id="story">
+  <div class="section-inner story-inner">
+    <div class="story-photo">
+      <img src="assets/dana-stutman.webp" alt="Dana Stutman, founder of Clockd" class="photo-real"/>
+      <div class="photo-tag">
+        <strong>Dana Stutman</strong>
+        <span>Founder · NY attorney</span>
+      </div>
+    </div>
+    <div class="story-copy">
+      <div class="eyebrow">Our story</div>
+      <h2 class="h2">
+        <span class="serif">&ldquo;</span>I lost twelve billable hours one week.
+        <span class="h2-em">I built Clockd so it never happened again.</span><span class="serif">&rdquo;</span>
+      </h2>
+      <p>
+        Clockd is made by Dana Stutman, a practicing attorney in Manhattan, and
+        a small team of engineers who spent a lot of time watching lawyers work.
+        We got tired of friends losing money to paperwork, and tired of software
+        that was clearly built for someone else.
+      </p>
+      <p>
+        We're building the time-tracker we wished we had in our first year of
+        practice. Warm, fast, quiet when it needs to be. A tool that respects
+        the fact that the work , not the tool , is the point.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="eyebrow">What early users say</div>
+    <h2 class="h2">A few kind words from the Law Firms who helped test Clockd.</h2>
+    <div class="t-grid">
+      <figure class="t-card">
+        <blockquote>The first time tracker that doesn't feel like punishment. I actually open it.</blockquote>
+        <figcaption>
+          <div class="t-who">Maya Okonkwo</div>
+          <div class="t-firm">Associate · Sterling &amp; Cross</div>
+        </figcaption>
+      </figure>
+      <figure class="t-card">
+        <blockquote>I caught nine hours of billable work last week that would've just disappeared. Nine.</blockquote>
+        <figcaption>
+          <div class="t-who">Jordan Price</div>
+          <div class="t-firm">Partner · Harlow Legal</div>
+        </figcaption>
+      </figure>
+      <figure class="t-card">
+        <blockquote>It feels like an app built by someone who has actually billed an hour in their life.</blockquote>
+        <figcaption>
+          <div class="t-who">Elena Ruiz</div>
+          <div class="t-firm">Solo Practice · Brooklyn, NY</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BIG CTA ========== -->
+<section class="cta" id="cta">
+  <div class="section-inner cta-inner">
+    <h2 class="cta-h">
+      Launching late 2026. <br/>
+      <span class="h2-em">Be first through the door.</span>
+    </h2>
+    <p>
+      Drop your email and we'll send you one note the day Clockd ships, plus
+      a founders'-list invite before it hits the App Store.
+    </p>
+    <form class="notify notify-big" onsubmit="return handleNotify(event)">
+      <input type="email" required placeholder="you@yourfirm.com" autocomplete="email"/>
+      <button type="submit" class="btn btn-primary">Notify me at launch →</button>
+    </form>
+    <div class="cta-badges">
+      <a href="#notify" class="store-badge store-badge-light">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        <div class="store-badge-text"><span class="tiny">Coming soon on</span><span class="big">App Store</span></div>
+      </a>
+      <a href="#notify" class="store-badge store-badge-light">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3.61 1.81a2 2 0 0 0-.61 1.45v17.48a2 2 0 0 0 .61 1.45l10.34-10.19L3.61 1.81zm11.4 9.24l2.83-2.79 3.6 2.06c1.24.71 1.24 2.5 0 3.21l-3.6 2.06-2.83-2.79 2.56-2.52-2.56-1.23zm-1.42 1.4L4.5 21.48l9.09-5.2-1-2.72 1-1.11zm0-2.9 1-1.11 1-2.72-9.09-5.2 8.09 9.03z"/></svg>
+        <div class="store-badge-text"><span class="tiny">Coming soon on</span><span class="big">Google Play</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-inner">
+    <div class="contact-copy">
+      <div class="eyebrow">Contact</div>
+      <h2 class="h2">Say hello.</h2>
+      <p>
+        Whether you're an attorney wanting early access, a firm thinking
+        about rolling Clockd out, or you just want to chat about the work
+       , we read everything.
+      </p>
+      <div class="contact-facts">
+        <div>
+          <div class="cf-k">Email</div>
+          <a class="cf-v" href="mailto:support@getclockd.com">support@getclockd.com</a>
+        </div>
+        <div>
+          <div class="cf-k">Office</div>
+          <div class="cf-v">Lower East Side<br/>Manhattan, New York</div>
+        </div>
+        <div>
+          <div class="cf-k">Hours</div>
+          <div class="cf-v">Mon – Fri, 9–6 ET</div>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="return handleContact(event)">
+      <div class="row">
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" required placeholder="Jane Doe"/>
+        </label>
+        <label>
+          <span>Firm</span>
+          <input type="text" name="firm" placeholder="Sterling &amp; Cross"/>
+        </label>
+      </div>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required placeholder="jane@yourfirm.com"/>
+      </label>
+      <label>
+        <span>How can we help?</span>
+        <textarea name="message" rows="5" required placeholder="Tell us a little about your practice or what you'd like to know about Clockd."></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary btn-lg">Send message →</button>
+      <div class="form-note" id="contact-note"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <img src="assets/clockd-logo-green.png" alt="Clockd" class="foot-logo"/>
+      <p>Time tracking, built by an attorney, for attorneys.<br/>Launching late 2026.</p>
+      <div class="foot-badges">
+        <a href="#notify" class="store-badge store-badge-sm">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <div class="store-badge-text"><span class="tiny">Coming soon on</span><span class="big">App Store</span></div>
+        </a>
+        <a href="#notify" class="store-badge store-badge-sm">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3.61 1.81a2 2 0 0 0-.61 1.45v17.48a2 2 0 0 0 .61 1.45l10.34-10.19L3.61 1.81zm11.4 9.24l2.83-2.79 3.6 2.06c1.24.71 1.24 2.5 0 3.21l-3.6 2.06-2.83-2.79 2.56-2.52-2.56-1.23zm-1.42 1.4L4.5 21.48l9.09-5.2-1-2.72 1-1.11zm0-2.9 1-1.11 1-2.72-9.09-5.2 8.09 9.03z"/></svg>
+          <div class="store-badge-text"><span class="tiny">Coming soon on</span><span class="big">Google Play</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Product</h4>
+      <a href="#why">Why Clockd</a>
+      <a href="#product">The app</a>
+      <a href="#story">Our story</a>
+      <a href="#notify">Get early access</a>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="#contact">Contact</a>
+      <a href="mailto:support@getclockd.com">support@getclockd.com</a>
+      <span class="foot-addr">Lower East Side<br/>Manhattan, New York</span>
+    </div>
+    <div class="foot-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Clockd. All rights reserved.</span>
+    <span>Made in Manhattan.</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
